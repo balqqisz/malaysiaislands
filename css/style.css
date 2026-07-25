@@ -1,0 +1,500 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+margin:0;
+font-family:'Inter',sans-serif;
+color:white;
+background: linear-gradient(
+180deg,
+#102A9A 0%,
+#0A1E85 18%,
+#07155A 40%,
+#030A25 70%,
+#000000 100%);
+
+}
+
+
+/* HEADER */
+
+header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 60px;
+
+    background:black;
+
+    position:relative;
+
+}
+
+.logo img{
+
+width:200px;
+
+}
+
+.menu-btn{
+
+    position:absolute;
+    top:50%;
+    right:60px;
+
+    transform:translateY(-50%);
+
+    width:30px;
+    height:20px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    cursor:pointer;
+
+    z-index:2000;
+
+}
+
+.menu-btn span{
+
+    width:100%;
+    height:2px;
+
+    background:#fff;
+
+    border-radius:2px;
+
+    transition:0.3s ease;
+
+}
+
+.menu-btn.active span:nth-child(1){
+
+    transform:translateY(9px) rotate(45deg);
+
+}
+
+.menu-btn.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.menu-btn.active span:nth-child(3){
+
+    transform:translateY(-9px) rotate(-45deg);
+
+}
+
+.sidebar{
+
+    position: fixed;
+    top: 0;
+    right: -320px;
+
+    width: 320px;
+    height: 100vh;
+
+    background: rgba(0,0,0,.95);
+
+    transition: .4s ease;
+
+    padding-top: 130px;
+
+    z-index: 1000;
+
+}
+
+.sidebar.active{
+    right:0;
+}
+
+.sidebar nav{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.sidebar nav a{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    color:white;
+    text-decoration:none;
+
+    font-size:17px;
+    font-weight:600;
+
+    padding:12px 45px;
+
+}
+
+.sidebar nav a:hover{
+
+    color:#7fc8ff;
+
+}
+
+.dropdown{
+    width:100%;
+}
+
+.dropdown > a{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.dropdown i{
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.dropdown.active i{
+
+    transform:rotate(180deg);
+
+}
+
+.submenu{
+
+    max-height:0;
+    overflow:hidden;
+
+    transition:max-height .35s ease;
+
+}
+
+.dropdown.active .submenu{
+
+    max-height:500px;
+
+}
+
+.submenu a{
+
+    display:block;
+
+    padding:10px 60px;
+
+    font-size:16px;
+    font-weight:500;
+
+    white-space:nowrap;      /* prevents wrapping */
+    text-align:left;
+
+}
+
+.submenu a:hover{
+
+    color:#74c0fc;
+
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* HERO */
+
+.hero{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:70px 80px;
+
+}
+
+.hero-text{
+
+width:40%;
+
+}
+
+.hero-text h1{
+
+font-family:'Inter',sans-serif;
+font-size:70px;
+line-height:1.1;
+margin-bottom:10px;
+
+}
+
+.hero-text p{
+
+font-size:22px;
+font-weight:300;
+margin-bottom:35px;
+
+}
+
+
+.btn{
+
+display:inline-block;
+background:white;
+color:black;
+padding:12px 40px;
+text-decoration:none;
+font-weight:600;
+font-size:14px;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+background:#111;
+color:white;
+
+}
+
+/* VIDEO */
+
+.hero-video{
+
+width:52%;
+position:relative;
+border:6px solid black;
+
+}
+
+.hero-video img{
+
+width:100%;
+display:block;
+
+}
+
+
+.play-btn{
+
+position:absolute;
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+width:70px;
+height:70px;
+
+border-radius:50%;
+	
+background:rgba(255,255,255,.7);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:30px;
+color:black;
+	
+text-decoration: none;
+
+transition: .3s;
+
+}
+
+.play-btn:hover{
+
+    background:white;
+    transform:translate(-50%,-50%) scale(1.08);
+
+}
+
+/* =========================================
+   OUR TOP PICKS
+========================================= */
+
+.top-picks {
+    width: 100%;
+    padding: 50px 3.5% 60px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.top-picks h2 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    font-family: "Inter", Arial, sans-serif;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    margin: 0 0 50px;
+}
+
+
+/* Vertical Line */
+
+.top-picks h2 span {
+    display: block;
+
+    width: 5px;
+    height: 46px;
+
+    background-color: white;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.island-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 48px 15px;
+}
+
+
+/* =========================================
+   ISLAND CARD
+========================================= */
+
+.island-card {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    height: 180px;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.island-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+/* =========================================
+   ISLAND NAME
+========================================= */
+
+.island-name {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    color: white;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 2px 5px
+        rgba(0, 0, 0, 0.7);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.island-card:hover img {
+    transform: scale(1.08);
+
+    filter:
+        brightness(0.7);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .island-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .island-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .island-card {
+        height: 200px;
+    }
+
+}
+
+footer {
+    font-family: "Inter", Arial, sans-serif;
+
+    font-size: 12px;
+
+    padding: 30px 40px 25px;
+
+    margin-top: 20px;
+
+    text-align: left;
+}

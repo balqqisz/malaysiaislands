@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="eng">
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+<title>aboutisland</title>
+	
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	
+<link href="css/style10.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<header>
+	<div class="logo">
+<img src="img/logoisland2.png" width="600px" alt="logo">
+</div>
+	
+<div class="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</header>
+	
+<!-- Sidebar -->
+
+<div class="sidebar" id="sidebar">
+
+    <nav>
+             <a href="index.html">Home</a>
+             <a href="aboutisland.html">About</a>
+		    
+		<div class="dropdown">
+
+            <a href="#" id="islandToggle">
+                Islands <i class="fa-solid fa-chevron-down"></i>
+            </a>
+			
+		 <div class="submenu">
+
+                <a href="redangisland.html">Redang Island</a>
+                <a href="tiomanisland.html">Tioman Island</a>
+                <a href="pangkorisland.html">Pangkor Island</a>
+                <a href="langkawiisland.html">Langkawi Island</a>
+                <a href="sipadanisland.html">Sipadan Island</a>
+                <a href="rawaisland.html">Rawa Island</a>
+                <a href="besarisland.html">Besar Island</a>
+                <a href="sempornaisland.html">Semporna Island</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</div>
+	
+<!-- About Malaysia Islands -->
+    <section class="about-islands">
+
+        <div class="about-content">
+
+            <div class="about-text">
+                <h1>ABOUT MALAYSIA ISLANDS</h1>
+
+                <p>
+                    Malaysia’s islands are broadly divided by coast, offering diverse
+                    experiences from pristine diving to luxury escapes. The ideal
+                    time to visit the East Coast (Perhentian, Redang, Tioman) is
+                    during the dry season from May to September, while the West
+                    Coast (Langkawi, Penang) peaks from December to February. The best time to visit Borneo is between March and October.
+                </p>
+            </div>
+
+            <div class="about-image">
+                <img src="img/aboutislands.jpeg" alt="Malaysia Islands">
+
+                <div class="image-caption">
+                    Malaysia Islands.
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Quote -->
+        <div class="quote">
+            “Life is an adventure, and every island is a new chapter.”
+        </div>
+
+        <div class="divider"></div>
+
+    </section>
+
+<!-- ==============================
+     BEST TIME TO VISIT
+================================ -->
+
+<section class="best-time">
+
+    <div class="best-time-inner">
+
+        <h2>BEST TIME TO VISIT MALAYSIA ISLANDS</h2>
+
+
+        <div class="coast-slider">
+
+            <div class="coast-content">
+
+
+                <!-- TEXT -->
+
+                <div class="coast-text">
+
+                    <h3 id="coastTitle">
+                        WEST COAST<br>
+                        ISLANDS
+                    </h3>
+
+                    <p
+                        class="visit-time"
+                        id="coastVisit"
+                    >
+                        Visit from December to April
+                    </p>
+
+                    <ul id="coastList">
+
+                        <li>Hot but less humid</li>
+
+                        <li>Blue skies most days</li>
+
+                        <li>
+                            Perfect for beaches and island hopping
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- LEFT ARROW -->
+
+                <button
+                    class="coast-arrow left-arrow"
+                    onclick="previousCoast()"
+                >
+                    &#10094;
+                </button>
+
+
+                <!-- IMAGE -->
+
+                <div class="coast-image">
+
+                    <img
+                        id="coastImage"
+                        src="img/westcoast.jpg"
+                        alt="West Coast Islands"
+                    >
+
+                </div>
+
+
+                <!-- RIGHT ARROW -->
+
+                <button
+                    class="coast-arrow right-arrow"
+                    onclick="nextCoast()"
+                >
+                    &#10095;
+                </button>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- INDICATORS -->
+
+        <div class="coast-indicator">
+
+            <span
+                class="indicator active"
+                onclick="showCoast(0)"
+            ></span>
+
+            <span
+                class="indicator"
+                onclick="showCoast(1)"
+            ></span>
+
+            <span
+                class="indicator"
+                onclick="showCoast(2)"
+            ></span>
+
+        </div>
+
+    </div>
+
+</section>
+	
+<script>
+
+    /* =========================
+       COAST DATA
+    ========================== */
+
+    const coastData = [
+
+        {
+            title: "WEST COAST<br>ISLANDS",
+
+            visit:
+                "Visit from December to April",
+
+            list: [
+                "Hot but less humid",
+                "Blue skies most days",
+                "Perfect for beaches and island hopping"
+            ],
+
+            image:
+                "img/westcoast.jpg"
+        },
+
+
+        {
+            title: "EAST COAST<br>ISLANDS",
+
+            visit:
+                "Visit from April to September",
+
+            list: [
+                "Clear water",
+                "Beaches look unreal",
+                "Ferry routes operate smoothly"
+            ],
+
+            image:
+                "img/eastcoast.jpg"
+        },
+
+
+        {
+            title: "BORNEO COAST<br>ISLANDS",
+
+            visit:
+                "Visit from May to October",
+
+            list: [
+                "Dry season",
+                "Less rainfall",
+                "Clearer river waters perfect for wildlife spotting and scuba"
+            ],
+
+            image:
+                "img/borneocoast.jpeg"
+        }
+
+    ];
+
+
+    /* =========================
+       CURRENT COAST
+    ========================== */
+
+    let currentCoast = 0;
+
+
+    /* =========================
+       SHOW COAST
+    ========================== */
+
+    function showCoast(index) {
+
+        currentCoast = index;
+
+        const data = coastData[currentCoast];
+
+        const title =
+            document.getElementById("coastTitle");
+
+        const visit =
+            document.getElementById("coastVisit");
+
+        const list =
+            document.getElementById("coastList");
+
+        const image =
+            document.getElementById("coastImage");
+
+
+        /* Add animation */
+
+        title.classList.add("coast-fade");
+
+        visit.classList.add("coast-fade");
+
+        list.classList.add("coast-fade");
+
+        image.classList.add("coast-image-slide");
+
+
+        /* Change content */
+
+        setTimeout(function() {
+
+            title.innerHTML = data.title;
+
+            visit.innerHTML = data.visit;
+
+            list.innerHTML = "";
+
+
+            data.list.forEach(function(item) {
+
+                const li =
+                    document.createElement("li");
+
+                li.innerHTML = item;
+
+                list.appendChild(li);
+
+            });
+
+
+            image.src = data.image;
+
+
+            /* Remove animation */
+
+            title.classList.remove("coast-fade");
+
+            visit.classList.remove("coast-fade");
+
+            list.classList.remove("coast-fade");
+
+            image.classList.remove("coast-image-slide");
+
+
+        }, 300);
+
+
+        /* Update dots */
+
+        const indicators =
+            document.querySelectorAll(".indicator");
+
+
+        indicators.forEach(function(indicator) {
+
+            indicator.classList.remove("active");
+
+        });
+
+
+        indicators[currentCoast]
+            .classList.add("active");
+
+    }
+
+
+    /* =========================
+       NEXT COAST
+    ========================== */
+
+    function nextCoast() {
+
+        currentCoast++;
+
+        if (currentCoast >= coastData.length) {
+
+            currentCoast = 0;
+
+        }
+
+        showCoast(currentCoast);
+
+    }
+
+
+    /* =========================
+       PREVIOUS COAST
+    ========================== */
+
+    function previousCoast() {
+
+        currentCoast--;
+
+        if (currentCoast < 0) {
+
+            currentCoast =
+                coastData.length - 1;
+
+        }
+
+        showCoast(currentCoast);
+
+    }
+
+<script>
+
+function toggleMenu() {
+
+    const menu =
+        document.getElementById("sideMenu");
+
+    menu.classList.toggle("active");
+
+}
+
+</script>
+
+</script>
+	
+	<script type="text/javascript" src="js/script10.js"></script>
+</body>
+</html>
