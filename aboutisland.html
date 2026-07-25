@@ -424,6 +424,150 @@ function toggleMenu() {
 
 </script>
 
+<script>
+
+const coastData = [
+
+    {
+        title: "WEST COAST<br>ISLANDS",
+
+        visit: "Visit from December to April",
+
+        list: [
+            "Hot but less humid",
+            "Blue skies most days",
+            "Perfect for beaches and island hopping"
+        ],
+
+        image: "img/westcoast.jpg"
+    },
+
+
+    {
+        title: "EAST COAST<br>ISLANDS",
+
+        visit: "Visit from April to September",
+
+        list: [
+            "Clear water",
+            "Beaches look unreal",
+            "Ferry routes operate smoothly"
+        ],
+
+        image: "img/eastcoast.jpg"
+    },
+
+
+    {
+        title: "BORNEO COAST<br>ISLANDS",
+
+        visit: "Visit from May to October",
+
+        list: [
+            "Dry season",
+            "Less rainfall",
+            "Clearer river waters perfect for wildlife spotting"
+        ],
+
+        image: "img/borneocoast.jpeg"
+    }
+
+];
+
+
+let currentCoast = 0;
+
+
+function showCoast(index) {
+
+    currentCoast = index;
+
+    const data = coastData[currentCoast];
+
+
+    document.getElementById("coastTitle").innerHTML =
+        data.title;
+
+
+    document.getElementById("coastVisit").innerHTML =
+        data.visit;
+
+
+    const list =
+        document.getElementById("coastList");
+
+    list.innerHTML = "";
+
+
+    data.list.forEach(function(item) {
+
+        const li =
+            document.createElement("li");
+
+        li.textContent = item;
+
+        list.appendChild(li);
+
+    });
+
+
+    document.getElementById("coastImage").src =
+        data.image;
+
+
+    /* Update indicators */
+
+    const indicators =
+        document.querySelectorAll(".indicator");
+
+
+    indicators.forEach(function(indicator) {
+
+        indicator.classList.remove("active");
+
+    });
+
+
+    if (indicators[currentCoast]) {
+
+        indicators[currentCoast]
+            .classList.add("active");
+
+    }
+
+}
+
+
+function nextCoast() {
+
+    currentCoast++;
+
+    if (currentCoast >= coastData.length) {
+
+        currentCoast = 0;
+
+    }
+
+    showCoast(currentCoast);
+
+}
+
+
+function previousCoast() {
+
+    currentCoast--;
+
+    if (currentCoast < 0) {
+
+        currentCoast =
+            coastData.length - 1;
+
+    }
+
+    showCoast(currentCoast);
+
+}
+
 </script>
 	
 	<script type="text/javascript" src="js/script10.js"></script>
